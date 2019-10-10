@@ -51,6 +51,7 @@ if __name__ == '__main__':
     # Open file and pass into print_using_dict function
     f = open('sales-report.txt')
     print_using_dict(f)
+    f.close()
 
 
 
