@@ -7,8 +7,8 @@ def print_using_lists(filename):
 
     # Parse out the salesperson and number of melons sold from each line
     for line in filename:
-        line = line.rstrip()
-        entries = line.split('|')
+        line = line.rstrip() # Remove trailing whitespace
+        entries = line.split('|') # Create list of data
         salesperson = entries[0]
         melons = int(entries[2])
 
@@ -34,13 +34,12 @@ def print_using_dict(filename):
     # Parse out the salesperson and number or melons sold from each line
     for line in filename:
         line = line.rstrip()
-        entries = line.split('|')
-        salesperson = entries[0]
-        melons = int(entries[2])
+
+        salesperson, total_cost, melons = line.split('|') # Unpack list
 
         # Add salesperson to and increment melons sold in dictionary
         sales_data[salesperson] = sales_data.get(salesperson, 0)
-        sales_data[salesperson] += melons
+        sales_data[salesperson] += int(melons)
 
     # Print salesperson and num of melons they sold
     for person, total_melons in sales_data.items():
